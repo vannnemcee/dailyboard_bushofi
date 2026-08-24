@@ -26,11 +26,13 @@ appdiv.className = "appdiv";
 app.appendChild(appdiv);
 
 const tugas = document.createElement("section");
+tugas.className = "section-tugas";
 tugas.innerHTML = `<h2>Daftar Tugas</h2>`;
 appdiv.appendChild(tugas);
 
 // card catatan
 const catatan = document.createElement("section");
+catatan.className = "section-catatan";
 catatan.innerHTML =
 `<h2>Daftar Catatan</h2><textarea id="incat" placeholder="Masukan Catatan"></textarea>
 <button id="tomcat">Tambah Catatan</button>
@@ -39,13 +41,15 @@ appdiv.appendChild(catatan);
 
 // card kutipan
 const kutipan = document.createElement("section");
+kutipan.className = "section-kutipan";
 kutipan.innerHTML = `<h2>Kutipan Harian</h2>`;
-app.appendChild(kutipan);
+appdiv.appendChild(kutipan);
 
 // card cuaca
 const cuaca = document.createElement("section");
+cuaca.className = "section-cuaca";
 cuaca.innerHTML = `<h1>Cuaca Hari ini</h1>`;
-app.appendChild(cuaca);
+appdiv.appendChild(cuaca);
 
 
 
@@ -374,9 +378,12 @@ kutipanDiv.id = "kutipan-harian";
 kutipanDiv.textContent = "Mengambil Kutipan....";
 kutipan.appendChild(kutipanDiv);
 
+// tombol segarkan kutipan
 const segarKutipan = document.createElement("button");
 segarKutipan.textContent = "Refresh Kutipan";
 kutipan.appendChild(segarKutipan);
+
+segarKutipan.addEventListener("click", ambilKutipan);
 
 async function ambilKutipan() {
     try {
