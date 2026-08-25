@@ -169,7 +169,7 @@ export function buatTugas(tugas, validasilnput) {
 	// ming 13 - drag and drop
 	function aktifkanDragDrop() {
 		const items = document.querySelectorAll(".tugas-item");
-		let draggedElement = null;
+		let dragElement = null;
 
 		items.forEach((item) => {
 			item.setAttribute("draggable", true);
