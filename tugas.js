@@ -191,11 +191,11 @@ export function buatTugas(tugas, validasilnput) {
 				if (item !== dragElement) {
 					const dragId = parseInt(dragElement.dataset.id);
 					const targetId = parseInt(item.dataset.id);
-					const draggedIndex = daftarTugas.findIndex((t) => t.id === dragId);
+					const dragIndex = daftarTugas.findIndex((t) => t.id === dragId);
 					const targetIndex = daftarTugas.findIndex((t) => t.id === targetId);
 
-					[daftarTugas[draggedIndex], daftarTugas[targetIndex]] =
-						[daftarTugas[targetIndex], daftarTugas[draggedIndex]];
+					[daftarTugas[dragIndex], daftarTugas[targetIndex]] =
+						[daftarTugas[targetIndex], daftarTugas[dragIndex]];
 
 					simpanKeStorage(daftarTugas);
 					renderTugas();
