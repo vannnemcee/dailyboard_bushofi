@@ -27,14 +27,14 @@ app.appendChild(appdiv);
 
 const tugas = document.createElement("section");
 tugas.className = "section-tugas";
-tugas.innerHTML = `<h2>Daftar Tugas</h2>`;
+tugas.innerHTML = `<h3>Daftar Tugas</h3>`;
 appdiv.appendChild(tugas);
 
 // card catatan
 const catatan = document.createElement("section");
 catatan.className = "section-catatan";
 catatan.innerHTML =
-`<h2>Daftar Catatan</h2><textarea id="incat" placeholder="Masukan Catatan"></textarea>
+`<h3>Daftar Catatan</h3><textarea id="incat" placeholder="Masukan Catatan"></textarea>
 <button id="tomcat">Tambah Catatan</button>
 <div id="daftar-catatan"></div>`;
 appdiv.appendChild(catatan);
@@ -42,13 +42,13 @@ appdiv.appendChild(catatan);
 // card kutipan
 const kutipan = document.createElement("section");
 kutipan.className = "section-kutipan";
-kutipan.innerHTML = `<h2>Kutipan Harian</h2>`;
-appdiv.appendChild(kutipan);
+kutipan.innerHTML = `<h3>Kutipan Harian</h3>`;
+app.appendChild(kutipan);
 
 // card cuaca
 const cuaca = document.createElement("section");
 cuaca.className = "section-cuaca";
-cuaca.innerHTML = `<h1>Cuaca Hari ini</h1>`;
+cuaca.innerHTML = `<h3>Cuaca Hari ini</h3>`;
 appdiv.appendChild(cuaca);
 
 
@@ -75,7 +75,7 @@ appdiv.appendChild(cuaca);
 // mingguan tugas ke 3
 // Event pada input
 const input = document.createElement("input");
-input.placeholder = " Tugas";
+input.placeholder = "Masukkan Tugas";
 input.className = "input-tugas";
 tugas.appendChild(input);
 
@@ -383,7 +383,9 @@ const segarKutipan = document.createElement("button");
 segarKutipan.textContent = "Refresh Kutipan";
 kutipan.appendChild(segarKutipan);
 
-segarKutipan.addEventListener("click", ambilKutipan);
+window.addEventListener("DOMContentLoaded", () => {
+    segarKutipan.addEventListener("click", ambilKutipan);
+});
 
 async function ambilKutipan() {
     try {
@@ -514,11 +516,26 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+
+// ming 16 Optimasi Performa & Deployment
+function debounce(fn, delay = 300) {
+    let timer;
+
+    return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => fn(...args), delay);
+    };
+}
+
 // Pencarian Tugas
-document.getElementById("cari-tugas").addEventListener("input", (e) => {
-    const kataKunci = e.target.value.toLowerCase();
+const cariTugasDebounced = debounce((kataKunci) => {
     const hasil = daftarTugas.filter((t) => t.nama.toLowerCase().includes(kataKunci));
     renderTugasKustom(hasil);
+}, 300);
+
+document.getElementById("cari-tugas").addEventListener("input", (e) => {
+    const kataKunci = e.target.value.toLowerCase();
+    cariTugasDebounced(kataKunci);
 });
 
 // agar bisa memunculkan pencariannya
