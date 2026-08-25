@@ -20,7 +20,7 @@ judul.innerHTML = `<center>Selamat datang di DailyBoard Evan!</center>`;
 app.appendChild(judul);
 
 // Mengubah gaya elemen lewat JS
-judul.style.color = "#2563eb";
+judul.style.color = "#00bf66";
 
 // memunculkan minggu 12
 const sumberData = document.createElement("p");
