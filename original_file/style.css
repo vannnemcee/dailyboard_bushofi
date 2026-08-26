@@ -1,0 +1,293 @@
+* {
+    box-sizing: border-box;
+}
+
+/* warna untuk tombol mode terang */
+:root {
+    --header: #f8fcfa;
+    --bg: #f1f7f3;
+    --text: #18352c;
+    --inputcolor: #e2eee7;
+    --inputtext: #18352c;
+    --card: rgba(255, 255, 255, 0.92);
+    --carddalam: #e8f2ec;
+    --tombol: #198754;
+    --tombol3: #d7eee0;
+    --texthover: #ffffff;
+    --tombolhover: #146c43;
+    --tomboltext: #ffffff;
+    --tomboltext3: #17643f;
+    --textfooter: #5f796b;
+}
+
+/* warna untuk tombol mode gelap */
+body.dark-mode {
+    --header: #171c1a;
+    --bg: #0d1210;
+    --text: #d8f3e2;
+    --inputcolor: #242e29;
+    --inputtext: #d8f3e2;
+    --card: #181e1b;
+    --carddalam: #232d27;
+    --tombol: #35c878;
+    --tombol3: #294a36;
+    --texthover: #ffffff;
+    --tombolhover: #54df91;
+    --tomboltext: #07140c;
+    --tomboltext3: #b2f2c8;
+    --textfooter: #9ab9a4;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: var(--header);
+    color: var(--text);
+    box-shadow: 0 1px 24px rgba(25, 135, 84, 0.12);
+    padding: 12px 36px;
+    min-height: 72px;
+    font-family: Arial;
+}
+
+header h2 {
+    margin: 0;
+    font-weight: 800;
+}
+
+#app {
+    padding: 8px 18px 0;
+}
+
+#app h1 {
+    margin: 20px 0 18px;
+    font-size: 25px;
+    line-height: 1.2;
+}
+
+footer {
+    background-color: var(--bg);
+    color: var(--textfooter);
+    text-align: center;
+    padding: 5px;
+    margin-top: 18px;
+}
+
+/* input */
+input {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    border: none;
+    background-color: var(--inputcolor);
+    color: var(--inputtext);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.input-tugas {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+} 
+
+
+#incat {
+    background-color: var(--inputcolor);
+}
+
+/* tombol hapus disebelah kanan */
+.tugas-item {
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.tugas-item button {
+    margin-left: auto;
+}
+
+/* textaera catatan */
+
+textarea {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    border: none;
+    border: 1px #b8d5c2 solid;
+    border-radius:5px;
+    color: var(--inputtext);
+    padding: 10px;
+}
+
+button {
+    margin: 8px 5px;
+    background: var(--tombol);
+    border-radius: 5px; 
+    padding: 7px 15px;
+    border: none;   
+    font-weight: 700;
+    font-size: 0.7rem;
+    color: var(--tomboltext);
+    cursor: pointer;
+}
+
+button:hover {
+    background: #146c43;
+}
+
+.tmbl-semua,
+.tmbl-selesai,
+.tmbl-belum {
+    background: var(--tombol3);
+    color: var(--tomboltext3);
+}
+
+.tmbl-semua:hover,
+.tmbl-selesai:hover,
+.tmbl-belum:hover {
+    color: var(--texthover);
+    background: var(--tombolhover);
+}
+
+.tmbl-semua:active,
+.tmbl-selesai:active,
+.tmbl-belum:active {
+    background:  var(--tombol);
+    color: var(--tomboltext);
+    border: none;
+}
+
+/* tempat bebas ubah section */
+section {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid var(--card);
+    font-size: 15px;
+    border-radius: 10px;
+    color: var(--text);
+    background: var(--card);
+    padding: 18px 22px 18px;
+    box-shadow: 0 2px 10px rgba(24, 53, 44, 0.08);
+}
+
+section h3 {
+    margin: 0 0 14px;
+    font-weight: 700;
+}
+
+.catatan-item {
+    background: var(--carddalam);
+    border: 1px solid #b8d5c2;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+/* agar bisa digeser didalam daftar catatan */
+#daftar-catatan {
+    max-height: 160px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* agar bisa digeser didalam daftar tugas */
+#daftar-tugas {
+    max-height: 100px;
+    overflow-y: auto;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: 0;
+}
+
+#kutipan-harian {
+    font-size: 13px;
+    border-left: 3px solid var(--tombol);
+    padding-left: 10px;
+}
+
+li {
+    border-radius: 10px;
+    background: var(--carddalam);
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+/* Wadah utama untuk menyusun empat section */
+.appdiv {
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr) minmax(260px, 0fr);
+    grid-template-rows: auto auto;
+    gap: 20px;
+    max-width: 2000px;
+}
+
+/* agar bisa ubah kekanan kekiri yang didalam sc nya (tugas/catatan/kutipan/cuaca) */
+.section-tugas {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.section-catatan {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.section-cuaca {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+/* ngatur mode all device */
+@media (max-width: 768px) {
+    .appdiv {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        margin: 0 5%;
+    }
+
+    #app h1 {
+        font-size: 20px;
+    }
+    
+    .section-tugas,
+    .section-cuaca,
+    .section-catatan {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .section-kutipan {
+        margin: 20px;
+    }
+}
+
+p {
+    color: var(--text); 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+}
+
+#status {
+    text-align: center;
+}
+
+
+/* tempat ubah warna tombol tema */
+#toggle-tema {
+    background-color: var(--tombol);
+    margin: 0;
+    margin-left: auto;
+    padding: 10px 18px;
+    font-size: 15px;
+}
+
+#toggle-tema:hover {
+    background: #146c43;
+}
