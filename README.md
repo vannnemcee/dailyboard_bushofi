@@ -63,6 +63,7 @@ Project DailyBoard dibuat untuk memenuhi tugas akhir semester dengan ketentuan:
 ```text
 tugas_dailyboard_evan/
 │
+├── original_file/
 ├── index.html
 ├── style.css
 ├── script.js
@@ -73,6 +74,7 @@ tugas_dailyboard_evan/
 └── README.md
 ```
 
+* `original_file/` — Di dalam folder ini adalah strukture file yang belum di minifikasi
 * `index.html` — Struktur utama website.
 * `style.css` — Tampilan dan responsivitas website.
 * `script.js` — Menghubungkan seluruh fitur.
