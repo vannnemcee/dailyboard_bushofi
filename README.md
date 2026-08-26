@@ -23,25 +23,25 @@ Project DailyBoard dibuat untuk memenuhi tugas akhir semester dengan ketentuan:
 
 ## ✨ Fitur
 
-- **Daftar**
+- **Daftar Tugas**
   - Tambah, edit, dan hapus tugas.
   - Tandai tugas selesai.
   - Filter dan pencarian tugas.
   - Drag & drop urutan tugas.
 
-- **Catatan**
+- **Fitur Catatan Cepat**
   - Tambah, edit, dan hapus catatan.
   - Data tersimpan di browser.
   
-- **Cuaca**
+- **Widget Cuaca**
   - Mencari cuaca berdasarkan nama kota.
   - Menampilkan suhu dan kondisi cuaca.
 
-- **Kutipan**
+- **Kutipan Harian**
   - Menampilkan kutipan harian.
   - Refresh untuk mendapatkan kutipan baru.
 
-- **Tema**
+- **Fitur Ubah Tema**
   - Light mode dan dark mode.
   - Pilihan tema tersimpan otomatis.
 
@@ -77,7 +77,7 @@ tugas_dailyboard_evan/
 * `original_file/` — Di dalam folder ini adalah strukture file yang belum di minifikasi
 * `index.html` — Struktur utama website.
 * `style.css` — Tampilan dan responsivitas website.
-* `script.js` — Menghubungkan seluruh fitur.
+* `script.js` — Menghubungkan seluruh fitur dari js lain.
 * `tugas.js` — Logika fitur tugas.
 * `catatan.js` — Logika fitur catatan.
 * `api.js` — Mengambil data dari API.
